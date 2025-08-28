@@ -38,8 +38,10 @@ def api_root(request, format=None):
         'workouts': request.build_absolute_uri('/workouts/'),
     })
 
+from django.contrib import admin
+from django.urls import path
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include(router.urls)),
-    path('', api_root, name='api_root'),
+    # Add other available endpoints here
 ]
